@@ -1,5 +1,7 @@
+import { Banker } from "../entities/Banker";
 import { DataSource } from "typeorm";
 import { Client } from "../entities/Client";
+import { Transaction } from "../entities/Transaction";
 
 const connectDB = new DataSource({
   type: "postgres",
@@ -8,7 +10,7 @@ const connectDB = new DataSource({
   username: "postgres",
   password: "myPostgreDataBase",
   database: "FirstDB",
-  entities: [Client],
+  entities: [Client, Banker, Transaction],
   synchronize: true,
 });
 
